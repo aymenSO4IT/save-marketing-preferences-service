@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mongodb-app:
+    image: mongo
+    ports:
+      - 27017:27017
+    hostname:
+      mongodb
+  spring-boot-docker:
+    image: save-marketing-preferences-service/spring-boot-docker
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    links:
+      - mongodb-app

@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: docker
+  data:
+    mongodb:
+      database: marketing-preferences
+      uri: mongodb://mongodb-app:27017
+---
+spring:
+  profiles:
+    active: local
+  data:
+    mongodb:
+      database: marketing-preferences
+      uri: mongodb://localhost:27017
